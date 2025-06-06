@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Images - My First Marriage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <a href="index.html" class="nav-btn">HOME</a>
+            <a href="peter.html" class="nav-btn">PETER STORY</a>
+            <a href="masea.html" class="nav-btn">MASEA STORY</a>
+            <a href="images.html" class="nav-btn active">IMAGES</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content-area">
+            <section class="gallery-section">
+                <h2>Our Memories</h2>
+                <p>View our shared memories in the photo gallery:</p>
+                
+                <div class="gallery-link-container">
+                    <a href="https://drive.google.com/drive/folders/1zV0SWqalkE98h1UDDvIPbe7n00hhTL3V" 
+                       target="_blank" class="gallery-link">
+                       📷 Open Our Photo Gallery
+                    </a>
+                </div>
+                
+                <div class="upload-section">
+                    <h3>Add More Memories</h3>
+                    <p>Upload new images to our shared collection:</p>
+                    
+                    <div class="upload-box">
+                        <input type="file" id="imageUpload" accept="image/*" multiple class="hidden">
+                        <label for="imageUpload" class="upload-label">
+                            <span class="upload-icon">📤</span>
+                            <span>Select Images to Upload</span>
+                        </label>
+                        <div id="fileList" class="file-list"></div>
+                    </div>
+                    
+                    <div class="upload-controls hidden" id="uploadControls">
+                        <button id="uploadBtn" class="upload-btn">Upload Selected</button>
+                        <button id="cancelUpload" class="cancel-btn">Cancel</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2025 Peter and Vincencia. All rights reserved.</p>
+            <button id="musicToggle" class="music-btn">🎵 Play Music</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Images section specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const imageUpload = document.getElementById('imageUpload');
+            const uploadControls = document.getElementById('uploadControls');
+            const uploadBtn = document.getElementById('uploadBtn');
+            const cancelUpload = document.getElementById('cancelUpload');
+            const fileList = document.getElementById('fileList');
+            
+            imageUpload.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    fileList.innerHTML = '';
+                    for (let i = 0; i < this.files.length; i++) {
+                        const fileItem = document.createElement('div');
+                        fileItem.className = 'file-item';
+                        fileItem.textContent = `${i+1}. ${this.files[i].name}`;
+                        fileList.appendChild(fileItem);
+                    }
+                    uploadControls.classList.remove('hidden');
+                }
+            });
+            
+            uploadBtn.addEventListener('click', function() {
+                // In a real implementation, upload to Google Drive
+                alert('In a full implementation, this would upload to Google Drive.');
+                resetUploadUI();
+            });
+            
+            cancelUpload.addEventListener('click', resetUploadUI);
+            
+            function resetUploadUI() {
+                imageUpload.value = '';
+                fileList.innerHTML = '';
+                uploadControls.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
