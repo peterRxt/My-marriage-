@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masea's Story - My First Marriage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <a href="index.html" class="nav-btn">HOME</a>
+            <a href="peter.html" class="nav-btn">PETER STORY</a>
+            <a href="masea.html" class="nav-btn active">MASEA STORY</a>
+            <a href="images.html" class="nav-btn">IMAGES</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content-area">
+            <section class="editable-section">
+                <h2>Masea's Story</h2>
+                <p class="instructions">This is your space to share your perspective. Write freely and from your heart.</p>
+                
+                <div class="edit-controls">
+                    <button id="editBtn" class="edit-btn">✏️ Edit Story</button>
+                    <div id="saveControls" class="hidden">
+                        <button id="saveBtn" class="save-btn">💾 Save</button>
+                        <button id="cancelBtn" class="cancel-btn">❌ Cancel</button>
+                    </div>
+                </div>
+                
+                <div id="displayContent" class="story-display">
+                    <!-- Content will be loaded here -->
+                </div>
+                
+                <textarea id="storyEditor" class="hidden" placeholder="Write your story here..."></textarea>
+                
+                <div class="notification hidden" id="notification">
+                    Story saved successfully! An email has been sent to Peter.
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2025 Peter and Vincencia. All rights reserved.</p>
+            <button id="musicToggle" class="music-btn">🎵 Play Music</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Masea's Story specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const editBtn = document.getElementById('editBtn');
+            const saveBtn = document.getElementById('saveBtn');
+            const cancelBtn = document.getElementById('cancelBtn');
+            const displayContent = document.getElementById('displayContent');
+            const storyEditor = document.getElementById('storyEditor');
+            const saveControls = document.getElementById('saveControls');
+            const notification = document.getElementById('notification');
+            
+            // Load saved content
+            const savedContent = localStorage.getItem('maseaStory') || 
+                '<p>This space is for Masea to share her story. The content will appear here once saved.</p>';
+            displayContent.innerHTML = savedContent;
+            
+            // Edit button
+            editBtn.addEventListener('click', function() {
+                storyEditor.value = savedContent.replace(/<[^>]*>/g, '');
+                displayContent.classList.add('hidden');
+                storyEditor.classList.remove('hidden');
+                editBtn.classList.add('hidden');
+                saveControls.classList.remove('hidden');
+            });
+            
+            // Save button
+            saveBtn.addEventListener('click', function() {
+                const newContent = storyEditor.value;
+                localStorage.setItem('maseaStory', `<p>${newContent.replace(/\n/g, '</p><p>')}</p>`);
+                displayContent.innerHTML = `<p>${newContent.replace(/\n/g, '</p><p>')}</p>`;
+                
+                // Show notification
+                notification.classList.remove('hidden');
+                setTimeout(() => {
+                    notification.classList.add('hidden');
+                }, 3000);
+                
+                // Reset UI
+                displayContent.classList.remove('hidden');
+                storyEditor.classList.add('hidden');
+                saveControls.classList.add('hidden');
+                editBtn.classList.remove('hidden');
+                
+                // In a real implementation, send to server/email/WhatsApp
+                console.log('Content saved. Would send to email and WhatsApp in production.');
+            });
+            
+            // Cancel button
+            cancelBtn.addEventListener('click', function() {
+                displayContent.classList.remove('hidden');
+                storyEditor.classList.add('hidden');
+                saveControls.classList.add('hidden');
+                editBtn.classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
