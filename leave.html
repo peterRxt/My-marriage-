@@ -4,154 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Story: Why I Had to Leave</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #f0f4f8, #e2e8f0);
-      color: #1a202c;
-      display: flex;
-      justify-content: center;
-      padding: 40px 20px;
-    }
-
-    .container {
-      background-color: #ffffff;
-      padding: 30px;
-      max-width: 800px;
-      width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      animation: fadeIn 1.2s ease-in-out;
-    }
-
-    h1, h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 2.3em;
-      color: #2d3748;
-      border-bottom: 3px solid #cbd5e0;
-      padding-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 1.6em;
-      color: #4a5568;
-      margin-top: 40px;
-    }
-
-    .section {
-      margin-bottom: 30px;
-    }
-
-    .reason {
-      margin-bottom: 18px;
-      background: #f7fafc;
-      padding: 12px 16px;
-      border-left: 5px solid #63b3ed;
-      border-radius: 6px;
-    }
-
-    .reason p {
-      margin: 0;
-      font-size: 1.05em;
-      color: #2d3748;
-      line-height: 1.6;
-    }
-
-    .highlight {
-      font-weight: bold;
-      color: #2c5282;
-      font-size: 1.15em;
-      text-align: center;
-      margin-top: 40px;
-      margin-bottom: 20px;
-    }
-
-    .sunset-section {
-      background: linear-gradient(to top, #ffedd5, #fecaca);
-      border-radius: 12px;
-      padding: 25px 20px;
-      margin-top: 20px;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #718096;
-      border-top: 1px solid #e2e8f0;
-      padding-top: 15px;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 1.7em; }
-      h2 { font-size: 1.3em; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <h1>🌿 My Story: Why I Had to Leave</h1>
-
-    <h2>🟢 Reasons to Stay</h2>
-    <div class="section">
-      <div class="reason">
-        <p>1️⃣ Uncertainties — maybe things will improve. 50/50 🎲</p>
-      </div>
-      <div class="reason">
-        <p>2️⃣ The sacrifice made is so huge to just let go… but to what end? ⚖️</p>
-      </div>
-    </div>
-
-    <div class="highlight">
-      ⚖️ Weighing both sides, I strongly believed leaving was better than staying.
-    </div>
-
-    <h2>🔴 Why I Had to Leave</h2>
-    <div class="section sunset-section">
-      <div class="reason">
-        <p>1️⃣ Lost Respect. I believe once lost, it can't be recovered. 💔</p>
-      </div>
-      <div class="reason">
-        <p>2️⃣ I Value Peace Above All. Kithyoko was promising — but how could I be peaceful? I had to sacrifice peace or business. I chose peace. 🕊️</p>
-      </div>
-      <div class="reason">
-        <p>3️⃣ Love Lost. How could I explain my absence to Clara? It was over 2 months. Masea grew to hate me more. Love couldn’t be recovered. 💔😔</p>
-      </div>
-      <div class="reason">
-        <p>4️⃣ I Have Become Damaged Goods. Nothing to offer to family — economically or socially. 🧍‍♂️💸</p>
-      </div>
-      <div class="reason">
-        <p>5️⃣ I Prefer Being Independent. I believe life is not to be controlled like a switch. 🔌</p>
-      </div>
-      <div class="reason">
-        <p>6️⃣ Patience vs Begging. Very difficult to differentiate the two. Love needs patience, but love should never beg. Where do we draw the line? 🤷‍♂️❤️</p>
-      </div>
-    </div>
-
-    <footer>
-      — peter <br>
-      <span id="date"></span>
-    </footer>
+    <img src="7.jpg" alt="memory 7" class="chapter-img">
+    <img src="8.jpg" alt="memory 8" class="chapter-img">
+    <!-- (Original leave.html content follows here...) -->
   </div>
-
-  <script>
-    // Auto-insert today's date
-    const dateElement = document.getElementById("date");
-    const today = new Date();
-    const formatted = today.toLocaleDateString("en-GB", {
-      year: 'numeric', month: 'long', day: 'numeric'
-    });
-    dateElement.textContent = `Written on ${formatted}`;
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
