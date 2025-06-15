@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why I Had to Leave</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f3f4f6, #e5e7eb);
+      color: #111827;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      max-width: 700px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.2em;
+      color: #1f2937;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 10px;
+    }
+
+    .reason {
+      margin-bottom: 25px;
+    }
+
+    .reason h2 {
+      font-size: 1.3em;
+      color: #374151;
+      margin-bottom: 8px;
+    }
+
+    .reason p {
+      font-size: 1.05em;
+      color: #4b5563;
+      line-height: 1.6;
+      background-color: #f9fafb;
+      padding: 12px 16px;
+      border-left: 4px solid #60a5fa;
+      border-radius: 6px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.6em;
+      }
+
+      .reason h2 {
+        font-size: 1.1em;
+      }
+
+      .reason p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Why I Had to Leave</h1>
+
+    <div class="reason">
+      <h2>1. Lost Respect</h2>
+      <p>I believe once respect is lost, it can't be recovered.</p>
+    </div>
+
+    <div class="reason">
+      <h2>2. Value Peace Above All</h2>
+      <p>Kithyoko was promising, but how could I be peaceful? I had to sacrifice peace or business. I prefer peace.</p>
+    </div>
+
+    <div class="reason">
+      <h2>3. Love Lost</h2>
+      <p>How could I explain my absence to Clara? It was more than 2 months. Masea grew to hate me more. Love couldn't be recovered.</p>
+    </div>
+
+    <div class="reason">
+      <h2>4. I Have Become Damaged Goods</h2>
+      <p>Nothing to offer to family—be it economic or social.</p>
+    </div>
+
+    <div class="reason">
+      <h2>5. I Prefer Being Independent</h2>
+      <p>I believe life is not to be controlled like a switch on/off.</p>
+    </div>
+  </div>
+</body>
+</html>
